@@ -1,0 +1,76 @@
+﻿@* 
+    Definition of the drawer 
+    This drawer is taken directly from Telerik's website
+*@
+
+@(Html.Kendo().Drawer()
+            .Name("drawer-test")
+            .Template(@"
+            <ul>
+                <li data-role='drawer-item' class='k-state-selected'><span class='k-icon k-i-inbox'></span><span class='k-item-text' data-id='Inbox'>Inbox</span></li>
+                <li data-role='drawer-separator'></li>
+                <li data-role='drawer-item'><span class='k-icon k-i-notification k-i-bell'></span><span class='k-item-text' data-id='Notifications'>Notifications</span></li>
+                <li data-role='drawer-item'><span class='k-icon k-i-calendar'></span><span class='k-item-text' data-id='Calendar'>Calendar</span></li>
+                <li data-role='drawer-item'><span class='k-icon k-i-hyperlink-email'></span><span class='k-item-text' data-id='Attachments'>Attachments</span></li>
+                <li data-role='drawer-separator'></li>
+                <li data-role='drawer-item'><span class='k-icon k-i-star-outline k-i-bookmark-outline'></span><span class='k-item-text' data-id='Favourites'>Favourites</span></li>
+            </ul>
+        ")
+                .Mode("push")
+                .Mini(true)
+                .Position("left")
+                .MinHeight(330)
+                .SwipeToOpen(true)
+                .Content(@"
+            <div id='drawer-content'>
+                <div id='Inbox'>
+                    <ul class='inboxList'>
+                        <li>
+                            <h6>Monday meeting</h6>
+                            <p>Hi Tom, Since Monday I'll be out of office, I'm rescheduling the meeting for Tuesday.</p>
+                        </li>
+                        <li>
+                            <h6>I'm sorry, Tom</h6>
+                            <p>Hi Tom, my aunt comes for a visit this Saturday, so I can't come back to St. Pete...</p>
+                        </li>
+                    </ul>
+                </div>
+                <div id='Notifications' class='hidden'>
+                    <ul>
+                        <li>Monday meeting</li>
+                        <li>Regarding org chart changes</li>
+                        <li>Meeting with Cliff</li>
+                        <li>Global Marketing Meeting</li>
+                        <li>Out tonight with collegues?</li>
+                    </ul>
+                </div>
+                <div id='Calendar' class='hidden'>
+                    <ul>
+                        <li>
+                            <h6>11/5 Monday</h6>
+                            <p>Martha Birthday</p>
+                        </li>
+                        <li>
+                            <h6>15/6 Sunday</h6>
+                            <p>Job interview for internal position</p>
+                        </li>
+                    </ul>
+                </div>
+                <div id='Attachments' class='hidden'>
+                    <ul>
+                        <li>Build enterprise apps</li>
+                        <li>Fw: Regarding Multiline textbox</li>
+                        <li>Away next week</li>
+                        <li>Fw: Your Costume is ready</li>
+                        <li>Update completed</li>
+                    </ul>
+                </div>
+                <div id='Favourites' class='hidden'>
+                    <ul>
+                        <li>90% Discount!</li>
+                        <li>90% Discount!</li>
+                        <li>One time offer!</li>
+                    </ul>
+                </div>
+            </div>
+        "))
